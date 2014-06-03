@@ -1,4 +1,4 @@
-include_recipe restart_command
+include_recipe opsworks-rails-precompile::restart_command
 node[:deploy].each do |application, deploy|
   rails_env = deploy[:rails_env]
   current_path = deploy[:current_path]
