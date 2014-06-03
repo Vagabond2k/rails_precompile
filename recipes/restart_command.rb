@@ -4,6 +4,7 @@ node[:deploy].each do |application, deploy|
     cwd deploy[:current_path]
     command "../../shared/scripts/unicorn clean-restart"
     user deploy[:user]
+    action :nothing
   end
 
 end
