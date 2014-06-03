@@ -10,6 +10,6 @@ node[:deploy].each do |application, deploy|
     command 'bundle exec rake assets:precompile'
     environment 'RAILS_ENV' => rails_env
   end
- notifies :run, resources(:execute =>"restart Rails app #{application} for custom env after precompile") 
+ notifies :run, "execute[restart Rails app #{application} for custom env after precompile]"
 
 end
